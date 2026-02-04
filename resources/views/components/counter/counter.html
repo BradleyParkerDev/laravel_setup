@@ -1,0 +1,19 @@
+<div
+    id="counter"
+    class="flex justify-evenly mt-[20px] w-[250px]"
+    x-data="{ count: 0 }"
+>
+    <button
+        x-on:click="count = Math.max(0, count - 1)"
+        class="bg-slate-700 text-white rounded-[10px] p-2"
+    >
+        Decrease
+    </button>
+    <span x-text="count"></span>
+    <button
+        x-on:click="count++"
+        class="bg-slate-700 text-white rounded-[10px] p-2"
+    >
+        Increase
+    </button>
+</div>

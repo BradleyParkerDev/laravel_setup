@@ -3,5 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('pages/home');
+
+    $heading = 'Laravel Setup';
+    return view('pages/home',['heading'=> $heading ]);
+    
 });

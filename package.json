@@ -3,8 +3,9 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "clean": "rimraf public/build/assets  public/build/manifest.json",
         "build": "vite build",
-        "dev": "vite"
+        "dev": "npm run clean && vite"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
