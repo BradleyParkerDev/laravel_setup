@@ -1,10 +1,6 @@
 <?php
 
+use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-
-    $heading = 'Laravel Setup';
-    return view('pages/home',['heading'=> $heading ]);
-    
-});
+Route::get('/', [WebController::class, 'homePage']);
