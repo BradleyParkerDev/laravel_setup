@@ -2,46 +2,33 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Services\UserService;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
+    public function __construct(private UserService $userService)
+    {
+    }
+
     public function registerUser()
     {
-        Log::info('User successfully registered!');
-
-        return response()->json([
-            'message' => 'User successfully registered!',
-        ]);
+        return $this->userService->createUserData();
     }
 
     public function getUser()
     {
-        Log::info('User successfully retrieved!');
-
-        return response()->json([
-            'message' => 'User successfully retrieved!',
-        ]);
+        return $this->userService->getUserData();
     }
 
     public function updateUser(Request $request)
     {
-        Log::info('User successfully updated!');
-
-        return response()->json([
-            'message' => 'User successfully updated!',
-            'data' => $request->all(),
-        ]);
+        return $this->userService->updateUserData($request);
     }
 
     public function deleteUser()
     {
-        Log::info('User successfully deleted!');
-
-        return response()->json([
-            'message' => 'User successfully deleted!',
-        ]);
+        return $this->userService->deleteUserData();
     }
 }
